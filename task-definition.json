@@ -1,0 +1,21 @@
+{
+  "family": "docker-webserver",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "256",
+  "memory": "512",
+  "executionRoleArn": "arn:aws:iam::425281906859:role/ecsTaskExecutionRole",
+  "containerDefinitions": [
+    {
+      "name": "docker-webserver",
+      "image": "425281906859.dkr.ecr.us-east-1.amazonaws.com/docker-webserver:latest",
+      "portMappings": [
+        {
+          "containerPort": 80,
+          "protocol": "tcp"
+        }
+      ],
+      "essential": true
+    }
+  ]
+}
